@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ff7fb1" />
+  <title>para camila 💘</title>
+  <style>
+    :root{
+      --bg1:#fff5fb;
+      --bg2:#ffe3f0;
+      --card:#ffffffcc;
+      --ink:#2b1b22;
+      --muted:#6b4a57;
+      --pink:#ff5fa2;
+      --pink2:#ff9bc7;
+      --shadow: 0 12px 30px rgba(255,95,162,.22);
+      --radius: 22px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-rounded, system-ui, -apple-system, "SF Pro Rounded", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      color:var(--ink);
+      background: radial-gradient(1200px 800px at 20% 0%, var(--bg2), transparent 55%),
+                  radial-gradient(1200px 800px at 80% 100%, #ffd2e7, transparent 50%),
+                  linear-gradient(180deg, var(--bg1), #fff);
+      overflow-x:hidden;
+    }
+
+    /* subtle floating hearts */
+    .hearts{position:fixed; inset:0; pointer-events:none; z-index:0; opacity:.35}
+    .hearts span{
+      position:absolute;
+      font-size:14px;
+      animation: floatUp linear infinite;
+      filter: drop-shadow(0 6px 12px rgba(255,95,162,.15));
+    }
+    @keyframes floatUp{
+      from{transform:translateY(110vh) translateX(0) scale(.9); opacity:0}
+      10%{opacity:1}
+      to{transform:translateY(-20vh) translateX(28px) scale(1.15); opacity:0}
+    }
+
+    .wrap{position:relative; z-index:1; max-width:980px; margin:0 auto; padding:18px 14px 48px}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:10px;
+      padding:10px 6px;
+    }
+    .brand{display:flex; align-items:center; gap:10px}
+    .badge{
+      display:inline-flex; align-items:center; justify-content:center;
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(145deg, #ff8dc0, #ff4f9e);
+      box-shadow: var(--shadow);
+    }
+    .brand h1{margin:0; font-size:16px; letter-spacing:.2px}
+    .brand p{margin:2px 0 0; font-size:12px; color:var(--muted)}
+
+    .chip{
+      border:1px solid rgba(255,95,162,.25);
+      background:rgba(255,255,255,.75);
+      padding:8px 12px; border-radius:999px;
+      font-size:12px; color:var(--muted);
+      backdrop-filter: blur(8px);
+    }
+
+    .hero{
+      margin-top:10px;
+      padding:18px;
+      border-radius:var(--radius);
+      background: linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.65));
+      border:1px solid rgba(255,95,162,.18);
+      box-shadow: var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-60px;
+      background: radial-gradient(circle at 25% 15%, rgba(255,95,162,.18), transparent 45%),
+                  radial-gradient(circle at 80% 35%, rgba(255,155,199,.22), transparent 48%),
+                  radial-gradient(circle at 55% 85%, rgba(255,95,162,.14), transparent 55%);
+      transform: rotate(-8deg);
+    }
+    .hero > *{position:relative}
+
+    .title{margin:0 0 8px; font-size:22px; line-height:1.15}
+    .subtitle{margin:0 0 14px; color:var(--muted); font-size:13px; line-height:1.35}
+
+    .row{display:flex; gap:10px; flex-wrap:wrap}
+    .btn{
+      appearance:none; border:0; cursor:pointer;
+      padding:12px 14px; border-radius:16px;
+      font-weight:700; font-size:13px;
+      color:white;
+      background: linear-gradient(145deg, var(--pink), #ff3f90);
+      box-shadow: 0 10px 22px rgba(255,63,144,.25);
+    }
+    .btn.secondary{
+      color:var(--ink);
+      background:rgba(255,255,255,.8);
+      border:1px solid rgba(255,95,162,.22);
+      box-shadow:none;
+    }
+
+    .grid{
+      margin-top:14px;
+      display:grid;
+      grid-template-columns:1fr;
+      gap:12px;
+    }
+
+    .card{
+      border-radius:var(--radius);
+      background:var(--card);
+      border:1px solid rgba(255,95,162,.16);
+      box-shadow: 0 10px 26px rgba(0,0,0,.05);
+      padding:16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .card h2{margin:0 0 10px; font-size:16px}
+    .card p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
+
+    .letter{
+      white-space:pre-wrap;
+      font-size:14px;
+      line-height:1.7;
+      color:#3a2330;
+    }
+
+    .tools{display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px}
+    .field{display:grid; gap:6px}
+    label{font-size:12px; color:var(--muted)}
+    textarea, input[type="text"]{
+      width:100%;
+      border-radius:16px;
+      border:1px solid rgba(255,95,162,.22);
+      background:rgba(255,255,255,.85);
+      padding:12px 12px;
+      font:inherit;
+      outline:none;
+    }
+    textarea{min-height:120px; resize:vertical}
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(2, 1fr);
+      gap:10px;
+    }
+
+    .ph{
+      aspect-ratio: 1 / 1;
+      border-radius:18px;
+      border:1px dashed rgba(255,95,162,.35);
+      background: rgba(255,255,255,.65);
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      position:relative;
+    }
+    .ph img{width:100%; height:100%; object-fit:cover}
+    .ph small{color:var(--muted); font-size:12px; text-align:center; padding:10px}
+
+    /* cute kitty sticker (original, not Hello Kitty artwork) */
+    .sticker{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:10px 12px;
+      border-radius:18px;
+      background: rgba(255,255,255,.8);
+      border:1px solid rgba(255,95,162,.18);
+      box-shadow: 0 12px 28px rgba(255,95,162,.10);
+    }
+    .sticker svg{width:42px; height:42px}
+    .sticker b{font-size:13px}
+    .sticker span{display:block; font-size:12px; color:var(--muted)}
+
+    footer{
+      margin-top:18px;
+      padding:14px;
+      text-align:center;
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    /* desktop enhancements */
+    @media (min-width: 820px){
+      .wrap{padding:24px 18px 70px}
+      .title{font-size:30px}
+      .subtitle{font-size:14px}
+      .grid{grid-template-columns: 1.3fr .7fr}
+      .tools{grid-template-columns:1fr}
+      .gallery{grid-template-columns:repeat(3, 1fr)}
+    }
+  </style>
+</head>
+<body>
+  <div class="hearts" aria-hidden="true" id="hearts"></div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="badge" aria-hidden="true">💘</div>
+        <div>
+          <h1>Para mi princesita hermosha</h1>
+          <p>Una pagina web hecha con amor</p>
+        </div>
+      </div>
+      <div class="chip" id="dateChip">Hoy</div>
+    </header>
+
+    <section class="hero">
+      <h2 class="title" id="heroTitle">Amor de mi vida</h2>
+      <p class="subtitle" id="heroSubtitle">Esta página es una carta. un lugar rosita, dulce y lleno de recuerdos para ti.</p>
+      <div class="row" style="margin-top:10px">
+        <button class="btn" id="scrollLetter">Leer la carta</button>
+        <button class="btn secondary" id="scrollFotos">Ver fotitos</button>
+      </div>
+      <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap">
+        <div class="sticker" title="kitty sticker (original)">
+          <svg viewBox="0 0 64 64" role="img" aria-label="kitty">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#ff9bc7" />
+                <stop offset="1" stop-color="#ff5fa2" />
+              </linearGradient>
+            </defs>
+            <!-- ears -->
+            <path d="M14 22 L9 8 L22 16 Z" fill="#fff" stroke="#ff7fb1" stroke-width="2" />
+            <path d="M50 22 L55 8 L42 16 Z" fill="#fff" stroke="#ff7fb1" stroke-width="2" />
+            <!-- head -->
+            <circle cx="32" cy="34" r="22" fill="#fff" stroke="#ff7fb1" stroke-width="2" />
+            <!-- eyes -->
+            <circle cx="24" cy="32" r="3" fill="#2b1b22" />
+            <circle cx="40" cy="32" r="3" fill="#2b1b22" />
+            <!-- nose -->
+            <circle cx="32" cy="38" r="2.6" fill="#ff7fb1" />
+            <!-- whiskers -->
+            <path d="M10 36 H20" stroke="#6b4a57" stroke-width="2" stroke-linecap="round" />
+            <path d="M12 42 H22" stroke="#6b4a57" stroke-width="2" stroke-linecap="round" />
+            <path d="M44 36 H54" stroke="#6b4a57" stroke-width="2" stroke-linecap="round" />
+            <path d="M42 42 H52" stroke="#6b4a57" stroke-width="2" stroke-linecap="round" />
+            <!-- bow -->
+            <path d="M44 18c6-5 12-2 12 4s-6 9-12 4c-2-2-2-6 0-8z" fill="url(#g)" opacity=".95"/>
+            <path d="M44 18c-6-5-12-2-12 4s6 9 12 4c2-2 2-6 0-8z" fill="url(#g)" opacity=".95" transform="translate(-14 0)"/>
+            <circle cx="37" cy="22" r="3" fill="#ff3f90" />
+          </svg>
+          <div>
+            <b>Hello Kitty</b>
+            <span>Rosita, tierno y bonito</span>
+          </div>
+        </div>
+        <div class="sticker">
+          <div style="font-size:20px" aria-hidden="true">🎀</div>
+          <div>
+            <b>Te Amo Mi Niña</b>
+            <span>Con Mucho Amor Para Ti</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="grid">
+      <section class="card" id="carta">
+        <h2>La carta</h2>
+        <div class="letter" id="letterText">io hice esta página pensando en ti, en tu sonrisa, en la forma en que iluminas mis días sin darte cuenta. quería que tuvieras algo diferente, algo que pudieras abrir cuando quisieras recordar cuánto te amo y lo importante que eresh para mí.
+
+desde que llegaste a mi vida, todo se siente mash bonito mi amor, los días tienen otro color, las canciones tienen mash sentido y mi corazón tiene un lugar fijo donde quedarse, contigo mi amor ño fue casualidad, ño fue suerte, fue una bendición encontrar a una mujer tan maravillosa como tú.
+
+Me enamora tu forma de sentir tan profundo, tu dulzura, tu carácter, tu risa tan tuya, me enamora cómo amas, cómo cuidas, cómo te esfuerzas, eresh esa clase de persona que transforma la vida de alguien solo con estar presente y io tengo el privilegio de llamarte mi amor.
+
+Si algún día dudas de cuánto significas para mí, vuelve a esta página y recuerda que io te elijo, te elijo en los días felices, en los días complicados, en los momentos simples y en los grandes, te elijo poque mi corazón está tranquilo cuando está contigo.
+
+io quiero mash recuerdos a tu lado, mash planes, mash abrazos, mash besos, mash fotos, quiero seguir creciendo contigo, aprendiendo contigo y construyendo algo tan fuerte que nada lo pueda romper.
+
+Gracias por existir mi princesita, por amarme tan bonito, por hacerme sentir tan especial, gracias por ser mi paz, mi alegría, mi orgullo y mi lugar favorito en el mundo.
+
+Te amo con todo mi corazón y alma, mash de lo que las palabras pueden explicar, mash de lo que esta página puede contener, de aquí al infinito y mash alla.
+
+con todo mi amor,💘</div>
+        <div class="tools" style="margin-top:12px">
+          <div class="field">
+            <label for="letterInput">Shi quieres, edita la carta aquí</label>
+            <textarea id="letterInput"></textarea>
+          </div>
+          <div class="row">
+            <button class="btn" id="saveLetter">Guardar carta</button>
+            <button class="btn secondary" id="resetLetter">Restaurar</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="card">
+        <h2>Detallitos</h2>
+        <p>Podemos subir fotitos de noshotros.</p>
+
+        <div class="tools">
+          <div class="field">
+            <label for="nameInput">Mi princesita hermosha</label>
+            <input id="nameInput" type="text" value="mi amor" />
+          </div>
+          <div class="field">
+            <label for="subtitleInput">Te Amo con mi alma, porque el alma nunca muere</label>
+            <input id="subtitleInput" type="text" value="esta página es una carta. un lugar rosita, dulce y lleno de recuerdos para ti." />
+          </div>
+          <div class="row">
+            <button class="btn" id="saveHeader">Guardar arriba</button>
+            <button class="btn secondary" id="resetHeader">Restaurar</button>
+          </div>
+
+          <div class="field">
+            <label for="photoPicker">Sube 6 fotos (galería)</label>
+            <input id="photoPicker" type="file" accept="image/*" multiple />
+          </div>
+          <p style="margin:0; font-size:12px; color:var(--muted)">nota: eres mi felicidad entera</p>
+        </div>
+      </aside>
+
+      <section class="card" id="fotos" style="grid-column:1/-1">
+        <h2>Fotitos de nosotros</h2>
+        <div class="gallery" id="gallery">
+          <div class="ph"><small>foto 1</small></div>
+          <div class="ph"><small>foto 2</small></div>
+          <div class="ph"><small>foto 3</small></div>
+          <div class="ph"><small>foto 4</small></div>
+          <div class="ph"><small>foto 5</small></div>
+          <div class="ph"><small>foto 6</small></div>
+        </div>
+      </section>
+
+      <section class="card" style="grid-column:1/-1">
+        <h2>Pinky Promise 💘</h2>
+        <p id="promise">io te elijo todos los días, y voy a cuidarte con palabras, con detalles y con amor bonito 💘</p>
+      </section>
+    </main>
+
+    <footer>
+      Hecho con amor para la persona que mash amo.
+    </footer>
+  </div>
+
+  <script>
+    // ----- floating hearts -----
+    const hearts = document.getElementById('hearts');
+    const heartChars = ['💘','💗','💞','🎀','✨'];
+    const count = 18;
+    for(let i=0;i<count;i++){
+      const s = document.createElement('span');
+      s.textContent = heartChars[i % heartChars.length];
+      s.style.left = Math.random()*100 + 'vw';
+      s.style.animationDuration = (8 + Math.random()*10) + 's';
+      s.style.animationDelay = (-Math.random()*18) + 's';
+      s.style.fontSize = (12 + Math.random()*14) + 'px';
+      hearts.appendChild(s);
+    }
+
+    // ----- date chip -----
+    const dateChip = document.getElementById('dateChip');
+    const d = new Date();
+    const fmt = new Intl.DateTimeFormat('es-CO', { weekday:'long', year:'numeric', month:'long', day:'numeric' });
+    dateChip.textContent = fmt.format(d);
+
+    // ----- smooth scroll buttons -----
+    document.getElementById('scrollLetter').addEventListener('click', ()=>{
+      document.getElementById('carta').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+    document.getElementById('scrollFotos').addEventListener('click', ()=>{
+      document.getElementById('fotos').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+
+    // ----- local storage helpers -----
+    const LS = {
+      get:(k, fallback)=>{
+        try{ const v = localStorage.getItem(k); return v===null? fallback : v; }catch{ return fallback; }
+      },
+      set:(k, v)=>{ try{ localStorage.setItem(k, v); }catch{} },
+      del:(k)=>{ try{ localStorage.removeItem(k); }catch{} },
+    };
+
+    // header customization
+    const heroTitle = document.getElementById('heroTitle');
+    const heroSubtitle = document.getElementById('heroSubtitle');
+    const nameInput = document.getElementById('nameInput');
+    const subtitleInput = document.getElementById('subtitleInput');
+
+    function applyHeader(){
+      const name = LS.get('cami_name', 'mi amor');
+      const sub = LS.get('cami_sub', subtitleInput.value);
+      heroTitle.textContent = `hola, ${name}`;
+      heroSubtitle.textContent = sub;
+      nameInput.value = name;
+      subtitleInput.value = sub;
+    }
+    applyHeader();
+
+    document.getElementById('saveHeader').addEventListener('click', ()=>{
+      LS.set('cami_name', (nameInput.value || 'mi amor').trim());
+      LS.set('cami_sub', (subtitleInput.value || '').trim());
+      applyHeader();
+    });
+    document.getElementById('resetHeader').addEventListener('click', ()=>{
+      LS.del('cami_name');
+      LS.del('cami_sub');
+      applyHeader();
+    });
+
+    // letter editor
+    const letterText = document.getElementById('letterText');
+    const letterInput = document.getElementById('letterInput');
+    const defaultLetter = letterText.textContent;
+
+    function applyLetter(){
+      const saved = LS.get('cami_letter', defaultLetter);
+      letterText.textContent = saved;
+      letterInput.value = saved;
+    }
+    applyLetter();
+
+    document.getElementById('saveLetter').addEventListener('click', ()=>{
+      LS.set('cami_letter', letterInput.value);
+      applyLetter();
+    });
+    document.getElementById('resetLetter').addEventListener('click', ()=>{
+      LS.del('cami_letter');
+      applyLetter();
+    });
+
+    // photo gallery (stores as data urls - keep small number)
+    const gallery = document.getElementById('gallery');
+    const slots = Array.from(gallery.querySelectorAll('.ph'));
+
+    function setSlot(i, dataUrl){
+      const el = slots[i];
+      if(!el) return;
+      el.innerHTML = '';
+      const img = document.createElement('img');
+      img.alt = `foto ${i+1}`;
+      img.loading = 'lazy';
+      img.src = dataUrl;
+      el.appendChild(img);
+    }
+
+    function loadPhotos(){
+      for(let i=0;i<6;i++){
+        const key = `cami_photo_${i}`;
+        const v = LS.get(key, null);
+        if(v){
+          setSlot(i, v);
+        }else{
+          slots[i].innerHTML = `<small>foto ${i+1}</small>`;
+        }
+      }
+    }
+    loadPhotos();
+
+    async function fileToDataUrl(file){
+      return new Promise((resolve, reject)=>{
+        const reader = new FileReader();
+        reader.onload = ()=> resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(file);
+      });
+    }
+
+    document.getElementById('photoPicker').addEventListener('change', async (e)=>{
+      const files = Array.from(e.target.files || []).slice(0,6);
+      for(let i=0;i<6;i++){
+        LS.del(`cami_photo_${i}`);
+      }
+      for(let i=0;i<files.length;i++){
+        const dataUrl = await fileToDataUrl(files[i]);
+        LS.set(`cami_photo_${i}`, dataUrl);
+      }
+      loadPhotos();
+      e.target.value = '';
+    });
+  </script>
+</body>
+</html>
